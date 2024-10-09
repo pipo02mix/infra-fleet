@@ -3,7 +3,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: infra-fleet
+  name: flux-system
   namespace: flux-system
 spec:
   interval: 1m0s
@@ -20,8 +20,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./apps
+  path: ./clusters/production
   prune: true
   sourceRef:
     kind: GitRepository
-    name: infra-fleet
+    name: flux-system
